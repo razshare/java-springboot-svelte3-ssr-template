@@ -11,7 +11,7 @@
         
     <groupId>com.github.tncrazvan.svelte3ssr</groupId>
     <artifactId>template</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>Spring Boot Svelte 3 SSR Template</name>
     <description>A Spring Boot template that renders Svelte3 pages server side.</description>
     <repositories>

@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Oct 29 19:24:55 CET 2020
+template-1.0.0.jar>=
+template-1.0.0.pom>=
