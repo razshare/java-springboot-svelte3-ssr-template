@@ -1,4 +1,4 @@
-package com.github.tncrazvan.quarkus.tools.compression;
+package com.github.tncrazvan.springboot.tools.compression;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

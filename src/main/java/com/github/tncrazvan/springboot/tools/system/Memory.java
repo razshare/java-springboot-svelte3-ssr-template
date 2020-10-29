@@ -1,6 +1,6 @@
-package com.github.tncrazvan.quarkus.tools.system;
+package com.github.tncrazvan.springboot.tools.system;
 
-import com.github.tncrazvan.quarkus.tools.SharedObject;
+import com.github.tncrazvan.springboot.tools.SharedObject;
 
 /**
  * This interface contains a few methods that provide details regarding the JVM runtime resources.

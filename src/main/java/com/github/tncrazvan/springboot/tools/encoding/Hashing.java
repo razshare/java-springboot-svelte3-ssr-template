@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.github.tncrazvan.quarkus.tools.encoding;
+package com.github.tncrazvan.springboot.tools.encoding;
 
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
@@ -16,7 +16,7 @@ import java.util.logging.Level;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 
-import static com.github.tncrazvan.quarkus.tools.SharedObject.LOGGER;
+import static com.github.tncrazvan.springboot.tools.SharedObject.LOGGER;
 
 /**
  *

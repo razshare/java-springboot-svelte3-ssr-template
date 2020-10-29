@@ -5,7 +5,7 @@
  */
 package com.github.tncrazvan.svelte3ssr.template.services;
 
-import com.github.tncrazvan.quarkus.tools.system.ServerFile;
+import com.github.tncrazvan.springboot.tools.system.ServerFile;
 import com.github.tncrazvan.svelte3ssr.Svelte3SSR;
 import java.io.IOException;
 import java.nio.file.Path;

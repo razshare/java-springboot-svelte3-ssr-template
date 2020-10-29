@@ -1,4 +1,4 @@
-package com.github.tncrazvan.quarkus.tools.action;
+package com.github.tncrazvan.springboot.tools.action;
 
 /**
  *  Make a simple void callback.

@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.github.tncrazvan.quarkus.tools.encoding;
+package com.github.tncrazvan.springboot.tools.encoding;
 
-import static com.github.tncrazvan.quarkus.tools.SharedObject.BASE64_ENCODER;
-import static com.github.tncrazvan.quarkus.tools.SharedObject.BASE64_DECODER;
-import static com.github.tncrazvan.quarkus.tools.SharedObject.LOGGER;
+import static com.github.tncrazvan.springboot.tools.SharedObject.BASE64_ENCODER;
+import static com.github.tncrazvan.springboot.tools.SharedObject.BASE64_DECODER;
+import static com.github.tncrazvan.springboot.tools.SharedObject.LOGGER;
 
 import java.io.UnsupportedEncodingException;
 import java.util.logging.Level;

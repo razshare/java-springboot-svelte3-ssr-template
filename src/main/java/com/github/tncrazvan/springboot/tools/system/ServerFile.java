@@ -1,4 +1,4 @@
-package com.github.tncrazvan.quarkus.tools.system;
+package com.github.tncrazvan.springboot.tools.system;
 
 import java.io.File;
 import java.io.FileInputStream;

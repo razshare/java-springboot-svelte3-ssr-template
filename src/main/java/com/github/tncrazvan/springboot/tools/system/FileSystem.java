@@ -1,8 +1,8 @@
-package com.github.tncrazvan.quarkus.tools.system;
+package com.github.tncrazvan.springboot.tools.system;
 
 import java.io.File;
 
-import com.github.tncrazvan.quarkus.tools.action.CompleteAction;
+import com.github.tncrazvan.springboot.tools.action.CompleteAction;
 
 
 /**

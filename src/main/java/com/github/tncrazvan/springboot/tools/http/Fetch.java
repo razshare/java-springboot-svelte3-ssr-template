@@ -1,4 +1,4 @@
-package com.github.tncrazvan.quarkus.tools.http;
+package com.github.tncrazvan.springboot.tools.http;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
-import static com.github.tncrazvan.quarkus.tools.SharedObject.LOGGER;
+import static com.github.tncrazvan.springboot.tools.SharedObject.LOGGER;
 
 
 /**

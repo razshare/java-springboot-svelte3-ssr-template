@@ -1,4 +1,4 @@
-package com.github.tncrazvan.quarkus.tools;
+package com.github.tncrazvan.springboot.tools;
 
 import java.time.ZoneId;
 import java.util.Calendar;

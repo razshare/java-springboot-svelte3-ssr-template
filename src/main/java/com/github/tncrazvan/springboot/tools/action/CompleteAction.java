@@ -1,4 +1,4 @@
-package com.github.tncrazvan.quarkus.tools.action;
+package com.github.tncrazvan.springboot.tools.action;
 
 /**
  * Make a callback and defined its return type (R) and its parameter type (P).

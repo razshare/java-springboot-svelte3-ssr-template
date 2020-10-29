@@ -1,4 +1,4 @@
-package com.github.tncrazvan.quarkus.tools.http;
+package com.github.tncrazvan.springboot.tools.http;
 
 import java.io.UnsupportedEncodingException;
 

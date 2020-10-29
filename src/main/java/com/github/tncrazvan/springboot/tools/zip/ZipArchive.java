@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.github.tncrazvan.quarkus.tools.zip;
+package com.github.tncrazvan.springboot.tools.zip;
 
 
 import java.io.FileOutputStream;
@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
-import com.github.tncrazvan.quarkus.tools.system.ServerFile;
+import com.github.tncrazvan.springboot.tools.system.ServerFile;
 
-import static com.github.tncrazvan.quarkus.tools.SharedObject.LOGGER;
+import static com.github.tncrazvan.springboot.tools.SharedObject.LOGGER;
 
 
 /**
