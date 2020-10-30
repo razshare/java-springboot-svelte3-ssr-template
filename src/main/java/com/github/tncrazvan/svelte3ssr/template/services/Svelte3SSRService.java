@@ -1,58 +1,38 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.github.tncrazvan.svelte3ssr.template.services;
 
-import com.github.tncrazvan.springboot.tools.system.ServerFile;
 import com.github.tncrazvan.svelte3ssr.Svelte3SSR;
+import com.github.tncrazvan.svelte3ssr.Svelte3SSRResult;
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
+import org.graalvm.polyglot.Value;
 import org.springframework.stereotype.Service;
 
 @Service
 public class Svelte3SSRService extends Svelte3SSR{
     public Svelte3SSRService() {
         super(Path.of(System.getProperty("user.dir")));
+        Value ssr = context.eval("js", "(function(service){ssr=service;});");
+        ssr.executeVoid(this);
     }
     
-    /**
-     * Render as Svelte component as a page
-     * @param filename name of the file to render
-     * @param charset character set to use
-     * @return the rendered page as an html string ready to be served
-     * @throws IOException 
-     */
+    public String page(String filename) throws IOException{
+        return page(filename, "UTF-8");
+    }
     public String page(String filename, String charset) throws IOException{
-        return page(filename, charset, new HashMap<>(){{}}, "en");
+        return page(filename, charset, new HashMap<>());
     }
-    
-    /**
-     * Render as Svelte component as a page
-     * @param filename name of the file to render
-     * @param charset character set to use
-     * @param props properties to pass on to the rendered page as svelte props
-     * @return the rendered page as an html string ready to be served
-     * @throws IOException 
-     */
-    public String page(String filename, String charset, HashMap<String,Object> props) throws IOException{
+    public String page(String filename, String charset,HashMap<String,Object> props) throws IOException{
         return page(filename, charset, props, "en");
     }
-    
-    /**
-     * Render as Svelte component as a page
-     * @param filename name of the file to render
-     * @param charset character set to use
-     * @param props properties to pass on to the rendered page as svelte props
-     * @param language language of the html tag
-     * @return the rendered page as an html string ready to be served
-     * @throws IOException 
-     */
-    public String page(String filename, String charset, HashMap<String,Object> props, String language) throws IOException{
-        ServerFile file = new ServerFile(filename);
-        
-        return render(file.readString(charset), props).build(language);
+    public String page(String filename, String charset,HashMap<String,Object> props, String lang) throws IOException{
+        Value renderedObject = this.render(this.compile(Files.readString(Path.of(filename), Charset.forName(charset))));
+        Svelte3SSRResult result = new Svelte3SSRResult();
+        result.head = renderedObject.getMember("head").asString();
+        result.html = renderedObject.getMember("html").asString();
+        result.css = renderedObject.getMember("css").getMember("code").asString();
+        return result.build(lang);
     }
 }
