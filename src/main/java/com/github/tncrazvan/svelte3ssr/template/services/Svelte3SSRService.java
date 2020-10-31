@@ -14,8 +14,6 @@ import org.springframework.stereotype.Service;
 public class Svelte3SSRService extends Svelte3SSR{
     public Svelte3SSRService() {
         super(Path.of(System.getProperty("user.dir")));
-        Value ssr = context.eval("js", "(function(service){ssr=service;});");
-        ssr.executeVoid(this);
     }
     
     public String page(String filename) throws IOException{
