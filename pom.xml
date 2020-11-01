@@ -19,6 +19,10 @@
             <id>com.github.tncrazvan.Svelte3SSR</id>
             <url>https://raw.githubusercontent.com/tncrazvan/java-svelte3-ssr/master</url>
         </repository>
+        <repository>
+            <id>com.github.tncrazvan.Svelte3DOM</id>
+            <url>https://raw.githubusercontent.com/tncrazvan/java-svelte3-dom/master</url>
+        </repository>
     </repositories>
     <properties>
         <java.version>11</java.version>
@@ -41,12 +45,21 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        
         <dependency>
             <groupId>com.github.tncrazvan</groupId>
             <artifactId>Svelte3SSR</artifactId>
             <version>1.1.0</version>
             <type>jar</type>
         </dependency>
+        
+        <dependency>
+            <groupId>com.github.tncrazvan</groupId>
+            <artifactId>Svelte3DOM</artifactId>
+            <version>1.0.0</version>
+            <type>jar</type>
+        </dependency>
+        
     </dependencies>
 
     <build>
