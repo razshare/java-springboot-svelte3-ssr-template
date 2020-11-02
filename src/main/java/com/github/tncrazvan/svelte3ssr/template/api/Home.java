@@ -1,10 +1,8 @@
 package com.github.tncrazvan.svelte3ssr.template.api;
 
-import com.github.tncrazvan.springboot.tools.Strings;
 import com.github.tncrazvan.svelte3ssr.template.services.Svelte3DOMService;
 import com.github.tncrazvan.svelte3ssr.template.services.Svelte3SSRService;
 import java.io.IOException;
-import java.nio.file.Path;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

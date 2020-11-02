@@ -1,2 +1,1 @@
-this is a 
-<slot></slot>
+this is a test
