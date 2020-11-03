@@ -24,6 +24,6 @@ public class Home {
     
     @RequestMapping("/")
     public String home() throws IOException{
-        return ssr.page("./www/App.svelte");
+        return dom.page("./www/App.svelte");
     }
 }
