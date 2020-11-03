@@ -17,7 +17,7 @@ public class Home {
     @Autowired
     Svelte3DOMService dom;
     
-    @RequestMapping("/@bundles")
+    @RequestMapping(path="/@bundles",produces = "application/javascript")
     public String bundles(@RequestParam String id) throws IOException{
         return dom.getBundle(id);
     }

@@ -44,7 +44,7 @@ public class Svelte3DOMService extends Svelte3DOM{
         "\n" +
         "	<title>Svelte app</title>\n" +
         "\n" +
-        "	<script defer src='/@bundles?id="+id+"'></script>\n" +
+        "	<script defer type='module' src='/@bundles?id="+id+"'></script>\n" +
         "</head>\n" +
         "\n" +
         "<body>\n" +
