@@ -1,5 +1,5 @@
 <script>
-    import { Test } from './www/Test.svelte';
+    import Test from './www/Test.svelte';
 </script>
 <b on:click={()=>console.log("clicked")}>
     hello world
