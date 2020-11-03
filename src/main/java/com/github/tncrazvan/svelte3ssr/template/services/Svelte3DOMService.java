@@ -1,17 +1,22 @@
 package com.github.tncrazvan.svelte3ssr.template.services;
 
-import com.github.tncrazvan.springboot.tools.Strings;
-import com.github.tncrazvan.springboot.tools.system.ServerFile;
 import com.github.tncrazvan.svelte3dom.Svelte3DOM;
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
+import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 @Service
 public class Svelte3DOMService extends Svelte3DOM{
     public Svelte3DOMService(){
         super(Path.of(System.getProperty("user.dir")));
+    }
+    
+    private String uuid(){
+        return UUID.randomUUID().toString().replace("-", "");
     }
     
     public String page(String filename) throws IOException{
@@ -25,8 +30,11 @@ public class Svelte3DOMService extends Svelte3DOM{
     }
     
     public String page(String filename, String charset, HashMap<String,Object> props, String lang) throws IOException{
-        String id = Strings.uuid();
-        this.bundle(id,this.compile(new ServerFile(filename).readString(charset)));
+        String id = uuid();
+        String contents = Files.readString(Path.of(filename),Charset.forName(charset));
+        String compiledContents = this.compile(contents);
+        
+        this.bundle(id,compiledContents);
         return 
         "<!DOCTYPE html>\n" +
         "<html lang=\""+lang+"\">\n" +

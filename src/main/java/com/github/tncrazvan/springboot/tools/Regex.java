@@ -113,6 +113,28 @@ public interface Regex {
     }
 
     /**
+     * Extracts the all occurrences of the given regular expression on the given
+     * subject String.
+     * @param subject the input String.
+     * @param regex your regular expression.
+     * @return the nth occurred String.
+     */
+    public static String[] groups(final String subject, final String regex) {
+        final Pattern pattern = Pattern.compile(regex);
+        final Matcher matcher = pattern.matcher(subject);
+        
+        if (matcher.find()) {
+            int len = matcher.groupCount();
+            String[] result = new String[len];
+            for(int i = 0; i < len; i++){
+                result[i] = matcher.group(i);
+            }
+            return result;
+        }
+        return new String[0];
+    }
+    
+    /**
      * Extracts the nth occurrence of the given regular expression on the given
      * subject String.
      * 
