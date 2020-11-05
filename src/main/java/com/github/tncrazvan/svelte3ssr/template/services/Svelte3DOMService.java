@@ -30,11 +30,9 @@ public class Svelte3DOMService extends Svelte3DOM{
     }
     
     public String page(String filename, String charset, HashMap<String,Object> props, String lang) throws IOException{
-        String id = uuid();
+        //String id = uuid();
         String contents = Files.readString(Path.of(filename),Charset.forName(charset));
-        String compiledContents = this.compile(contents);
         
-        this.bundle(id,compiledContents);
         return 
         "<!DOCTYPE html>\n" +
         "<html lang=\""+lang+"\">\n" +
@@ -44,7 +42,10 @@ public class Svelte3DOMService extends Svelte3DOM{
         "\n" +
         "	<title>Svelte app</title>\n" +
         "\n" +
-        "	<script defer type='module' src='/@bundles?id="+id+"'></script>\n" +
+        //"	<script defer type='module' src='/@bundles?id="+id+"'></script>\n" +
+        "	<script defer type='module'>" + 
+        "       " + this.bundle(this.compile(contents)) +
+        "       </script>\n" +
         "</head>\n" +
         "\n" +
         "<body>\n" +

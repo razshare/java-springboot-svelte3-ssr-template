@@ -16,19 +16,21 @@ public class Svelte3SSRService extends Svelte3SSR{
         super(Path.of(System.getProperty("user.dir")));
     }
     
-    public String page(String filename) throws IOException{
-        return page(filename, "UTF-8");
+    public String page(Svelte3DOMService dom, String filename) throws IOException{
+        return page(dom, filename, "UTF-8");
     }
-    public String page(String filename, String charset) throws IOException{
-        return page(filename, charset, new HashMap<>());
+    public String page(Svelte3DOMService dom, String filename, String charset) throws IOException{
+        return page(dom, filename, charset, new HashMap<>());
     }
-    public String page(String filename, String charset,HashMap<String,Object> props) throws IOException{
-        return page(filename, charset, props, "en");
+    public String page(Svelte3DOMService dom, String filename, String charset,HashMap<String,Object> props) throws IOException{
+        return page(dom, filename, charset, props, "en");
     }
-    public String page(String filename, String charset,HashMap<String,Object> props, String lang) throws IOException{
-        Value renderedObject = this.render(this.compile(Files.readString(Path.of(filename), Charset.forName(charset))));
+    public String page(Svelte3DOMService dom, String filename, String charset,HashMap<String,Object> props, String lang) throws IOException{
+        String contents = Files.readString(Path.of(filename), Charset.forName(charset));
+        Value renderedObject = this.render(this.compile(contents));
         Svelte3SSRResult result = new Svelte3SSRResult();
         result.head = renderedObject.getMember("head").asString();
+        result.head += "<script deffer type='module'>document.body.innerHTML='';\n" + dom.bundle(dom.compile(contents)) + "</script>\n";
         result.html = renderedObject.getMember("html").asString();
         result.css = renderedObject.getMember("css").getMember("code").asString();
         return result.build(lang);
