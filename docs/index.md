@@ -13,13 +13,13 @@ This project makes use of 3 different items in order to achieve server side rend
 1. Svelte3SSR
 1. Svelte3DOM
 
-You will also need to install Maven: (http://maven.apache.org/download.cgi)[http://maven.apache.org/download.cgi]
+You will also need to install Maven: [http://maven.apache.org/download.cgi](http://maven.apache.org/download.cgi)
 
 ----
 
 ## GraalVM
 In order to get started you will need to download GraalVM.
-The official projects offers a free and open source commmunity edition, you can download it here: (https://www.graalvm.org/downloads/)[https://www.graalvm.org/downloads/]
+The official projects offers a free and open source commmunity edition, you can download it here: [https://www.graalvm.org/downloads/](https://www.graalvm.org/downloads/)
 
 Fortunately JavaScripts is included in the main bundle by default, this means there's not extra setup you have to do.
 Simply download a release and add the binaries to your global path variable.
@@ -31,8 +31,8 @@ These 2 items are 2 maven dependency that your template includes.
 You don't really have to setup anything here, but it is important to know that these 2 dependency are separate projects.
 My goal is to keep these 2 projects independent from Spring Boot, so that in the future it will become easier to implement them in other frameworks, such as Quarkus.
 
-- Svelte3SSR --> (https://github.com/tncrazvan/java-svelte3-ssr)[https://github.com/tncrazvan/java-svelte3-ssr]
-- Svelte3DOM --> (https://github.com/tncrazvan/java-svelte3-dom)[https://github.com/tncrazvan/java-svelte3-dom]
+- Svelte3SSR --> [https://github.com/tncrazvan/java-svelte3-ssr](https://github.com/tncrazvan/java-svelte3-ssr)
+- Svelte3DOM --> [https://github.com/tncrazvan/java-svelte3-dom](https://github.com/tncrazvan/java-svelte3-dom)
 
 ### Svelte3SSR
 This code base offers the class ```com.github.tncrazvan.svelte3ssr.Svelte3SSR```, which offers a few methods you can make use of in order to render you ```.svelte``` files.
@@ -43,7 +43,7 @@ This is the actual Svelte compiler in action and it makes use of the ```./compil
 
 - Svelte3SSR::render(String compiledSource, HashMap<String,Object> props)
 After compiling your source code, you can then pass it to the rendering method, which will simply wrap the input compiled source code in an anonymus function and execute in the javascript engine in order to obtain a JSON object.
-The resulting object is documented in the official Svelte documentation, which you can find here: (https://svelte.dev/docs#Server-side_component_API)[https://svelte.dev/docs#Server-side_component_API ]
+The resulting object is documented in the official Svelte documentation, which you can find here: [https://svelte.dev/docs#Server-side_component_API ](https://svelte.dev/docs#Server-side_component_API)
 This method will return a result of type ```org.graalvm.polyglot.Value``` which represents your JSON object.
 You can extract individual members of the object:
 ```java
@@ -61,7 +61,7 @@ Once the client loads your prerendered page there will be no dynamic functionali
 
 In order to make the DOM interactive and enable all the features Svelte offers, you will need to also prepare a bundle for your client, and you can do that with ```com.github.tncrazvan.svelte3dom.Svelte3DOM```.
 - Svelte3DOM::compile(String source)
-Just as ```Svelte3SSR```, ```Svelte3DOM``` offers a compiling method, except this time the compiling type is not ```ssr``` but ```dom``` (for more details on this check (https://svelte.dev/docs#svelte_compile)[https://svelte.dev/docs#svelte_compile]).
+Just as ```Svelte3SSR```, ```Svelte3DOM``` offers a compiling method, except this time the compiling type is not ```ssr``` but ```dom``` (for more details on this check [https://svelte.dev/docs#svelte_compile])(https://svelte.dev/docs#svelte_compile).
 Just as ```Svelte3SSR::compile```, this method will generate a script that can be executed, except this one will manage your client's dom instead of rendering it on the server, so there's no need to execute it, simply serve it.
 - Svelte3DOM::bundle(String compiledSource, LinkedHashMap<String,Object> props)
 Bundle your compiled script and prepare it to be attatched to a ```<script deffer type='module'>...</script>``` tag.
