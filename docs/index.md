@@ -67,3 +67,19 @@ The resulting script will also execute a ```document.body.innerHTML = '';``` ins
 
 ---
 ### Get started with the Template
+1. clone the main template
+```git clone https://github.com/tncrazvan/java-springboot-svelte3-ssr-template```
+1. install npm dependencies
+```npm i```
+1. run your spring boot server
+```mvn spring/boot:dev```
+This will take a while the first time your run it since maven will have to download all required dependencies including Svelte3SSR, Svelte3DOM and spring boot itself.
+
+You should be able to visit your website at http://localhost:8080
+
+I haven't tested every single thing, but most things should work properly.
+Most of the bugs you will find will be most probably related to the "import" and "export" keywords, since I had to implement them myself from scratch and that is because the GraalVM interoperability framework does not include NodeJS as a language itself but instead it only offers the plain JavaScript languages, which as I mentioned before, is missing the ```require``` function.
+
+In any case if you find any bugs feel free to submit an issue to the repository, I'll try to look into it and fix it.
+
+I hope you find it interesting, have fun and stay safe!
