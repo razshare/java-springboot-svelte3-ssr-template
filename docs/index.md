@@ -61,7 +61,7 @@ Once the client loads your prerendered page there will be no dynamic functionali
 
 In order to make the DOM interactive and enable all the features Svelte offers, you will need to also prepare a bundle for your client, and you can do that with ```com.github.tncrazvan.svelte3dom.Svelte3DOM```.
 - Svelte3DOM::compile(String source)
-Just as ```Svelte3SSR```, ```Svelte3DOM``` offers a compiling method, except this time the compiling type is not ```ssr``` but ```dom``` (for more details on this check [https://svelte.dev/docs#svelte_compile])(https://svelte.dev/docs#svelte_compile).
+Just as ```Svelte3SSR```, ```Svelte3DOM``` offers a compiling method, except this time the compiling type is not ```ssr``` but ```dom``` (for more details on this check [https://svelte.dev/docs#svelte_compile](https://svelte.dev/docs#svelte_compile)).
 Just as ```Svelte3SSR::compile```, this method will generate a script that can be executed, except this one will manage your client's dom instead of rendering it on the server, so there's no need to execute it, simply serve it.
 - Svelte3DOM::bundle(String compiledSource, LinkedHashMap<String,Object> props)
 Bundle your compiled script and prepare it to be attatched to a ```<script deffer type='module'>...</script>``` tag.
