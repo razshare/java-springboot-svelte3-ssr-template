@@ -39,7 +39,7 @@ This method offers the main functionality of the whole project.
 Upon being called, it will compile the given svelte ```source``` code into a ```cjs``` script that can be executed by the javascript engine in order to then obtain a pre rendered html and css output.
 This is the actual Svelte compiler in action and it makes use of the ```./compiler.js``` file inside your project root directory.
 
-- Svelte3SSR::render(String compiledSource)
+- Svelte3SSR::render(String compiledSource, HashMap<String,Object> props)
 After compiling your source code, you can then pass it to the rendering method, which will simply wrap the input compiled source code in an anonymus function and execute in the javascript engine in order to obtain a JSON object.
 The resulting object is documented in the official Svelte documentation, which you can find here: https://svelte.dev/docs#Server-side_component_API 
 This method will return a result of type ```org.graalvm.polyglot.Value``` which represents your JSON object.
@@ -52,3 +52,18 @@ result.html = renderedObject.getMember("html").asString();
 result.css = renderedObject.getMember("css").getMember("code").asString();
 ```
 where ```Svelte3SSRResult``` would be simple wrapper object.
+
+### Svelte3DOM
+Rendering svelte server is is pretty neat, but that might not be enough for your needs.
+Once the client loads your prerendered page there will be no dynamic functionalities and that's because server side javascript has no notion of what a DOM is, thus you will not be able to attach events or other interactive features to your client's DOM.
+
+In order to make the DOM interactive and enable all the features Svelte offers, you will need to also prepare a bundle for your client, and you can do that with ```com.github.tncrazvan.svelte3dom.Svelte3DOM```.
+- Svelte3DOM::compile(String source)
+Just as ```Svelte3SSR```, ```Svelte3DOM``` offers a compiling method, except this time the compiling type is not ```ssr``` but ```dom``` (for more details on this check https://svelte.dev/docs#svelte_compile).
+Just as ```Svelte3SSR::compile```, this method will generate a script that can be executed, except this one will manage your client's dom instead of rendering it on the server, so there's no need to execute it, simply serve it.
+- Svelte3DOM::bundle(String compiledSource, LinkedHashMap<String,Object> props)
+Bundle your compiled script and prepare it to be attatched to a ```<script deffer type='module'>...</script>``` tag.
+The resulting script will also execute a ```document.body.innerHTML = '';``` instruction right before rendering to the dom.
+
+---
+### Get started with the Template
