@@ -72,7 +72,7 @@ The resulting script will also execute a ```document.body.innerHTML = '';``` ins
 1. install npm dependencies
 ```npm i```
 1. run your spring boot server
-```mvn spring/boot:dev```
+```mvn spring-boot:dev```
 This will take a while the first time your run it since maven will have to download all required dependencies including Svelte3SSR, Svelte3DOM and spring boot itself.
 
 You should be able to visit your website at http://localhost:8080
