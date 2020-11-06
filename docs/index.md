@@ -13,6 +13,8 @@ This project makes use of 3 different items in order to achieve server side rend
 1. Svelte3SSR
 1. Svelte3DOM
 
+You will also need to install Maven: http://maven.apache.org/download.cgi
+
 ----
 
 ## GraalVM
