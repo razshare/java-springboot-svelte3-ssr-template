@@ -89,7 +89,7 @@ You will need to inject the ```Svelte3SSRService``` and the ```Svelte3DOMService
 If you've already tried to use this project in the past, you might have to clean your Maven repositories manually in order to get the new updates since the version number is basically the same as before.
 
 - On Linux, your maven repositories should be located in: ```~/.m2/repository/com/github/tncrazvan/Svelte3SSR``` and ```~/.m2/repository/com/github/tncrazvan/Svelte3DOM```
-- On Windows, you can find the maven repositories in: ```C:\Users\{username}\.m2\repository\com\github\tncrazvan\Svelte3SSR``` and ```C:\Users\{username}\.m2\repository\com\github\tncrazvan\Svelte3DOM```
+- On Windows, you can find them in: ```C:\Users\{username}\.m2\repository\com\github\tncrazvan\Svelte3SSR``` and ```C:\Users\{username}\.m2\repository\com\github\tncrazvan\Svelte3DOM```
 - on Mac OS: ```~/.m2/repository/com/github/tncrazvan/Svelte3SSR``` and ```~/.m2/repository/com/github/tncrazvan/Svelte3DOM```
 
 Remove these 2 repositories and run your server (```mvn spring-boot:run```).
