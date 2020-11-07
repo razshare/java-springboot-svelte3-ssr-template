@@ -74,10 +74,25 @@ The resulting script will also execute a ```document.body.innerHTML = '';``` ins
 1. install npm dependencies
 ```npm i```
 1. run your spring boot server
-```mvn spring-boot:dev```
+```mvn spring-boot:run```
 This will take a while the first time your run it since maven will have to download all required dependencies including Svelte3SSR, Svelte3DOM and spring boot itself.
 
 You should be able to visit your website at http://localhost:8080
+
+This template contains a default example page which can be found inside the ```com.github.tncrazvan.svelte3ssr.template.api.Home``` controller.
+You will need to inject the ```Svelte3SSRService``` and the ```Svelte3DOMService``` in order to be able to render your page.
+
+- ```Svelte3SSRService``` is nothing more than a thin wrapper that extends ```Svelte3SSR``` in order to provide a more direct and clean api.
+- ```Svelte3DOMService``` should be viewed in the same way as ```Svelte3SSRService``` but for bundle compilation.
+
+### NOTE:
+If you've already tried to use this project in the past, you might have to clean your Maven repositories manually in order to get the new updates since the version number is basically the same as before.
+
+- On Linux, your maven repositories should be located in: ```~/.m2/repository/com/github/tncrazvan/Svelte3SSR``` and ```~/.m2/repository/com/github/tncrazvan/Svelte3DOM```
+- On Windows, you can find the maven repositories in: ```C:\Users\{username}\.m2\repository\com\github\tncrazvan\Svelte3SSR``` and ```C:\Users\{username}\.m2\repository\com\github\tncrazvan\Svelte3DOM```
+- on Mac OS: ```~/.m2/repository/com/github/tncrazvan/Svelte3SSR``` and ```~/.m2/repository/com/github/tncrazvan/Svelte3DOM```
+
+Remove these 2 repositories and run your server (```mvn spring-boot:run```).
 
 I haven't tested every single thing, but most things should work properly.
 Most of the bugs you will find will be most probably related to the "import" and "export" keywords, since I had to implement them myself from scratch and that is because the GraalVM interoperability framework does not include NodeJS as a language itself but instead it only offers the plain JavaScript languages, which as I mentioned before, is missing the ```require``` function.
