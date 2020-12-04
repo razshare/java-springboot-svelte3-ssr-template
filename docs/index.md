@@ -95,7 +95,7 @@ If you've already tried to use this project in the past, you might have to clean
 Remove these 2 repositories and run your server (```mvn spring-boot:run```).
 
 I haven't tested every single thing, but most things should work properly.
-Most of the bugs you will find will be most probably related to the "import" and "export" keywords, since I had to implement them myself from scratch and that is because the GraalVM interoperability framework does not include NodeJS as a language itself but instead it only offers the plain JavaScript languages, which as I mentioned before, is missing the ```require``` function.
+Most of the bugs you will find will be most probably related to the "import" and "export" keywords, since I had to implement them myself from scratch and that is because the GraalVM interoperability framework does not include NodeJS as a language itself but instead it only offers the plain JavaScript language, which as I mentioned before, is missing the ```require``` function.
 
 In any case if you find any bugs feel free to submit an issue to the repository, I'll try to look into it and fix it.
 
