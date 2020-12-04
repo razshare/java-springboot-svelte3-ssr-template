@@ -21,7 +21,7 @@ You will also need to install Maven: [http://maven.apache.org/download.cgi](http
 In order to get started you will need to download GraalVM.
 The official projects offers a free and open source commmunity edition, you can download it here: [https://www.graalvm.org/downloads/](https://www.graalvm.org/downloads/)
 
-Fortunately JavaScripts is included in the main bundle by default, this means there's not extra setup you have to do.
+Fortunately JavaScript is included in the main bundle by default, this means there's no extra setup you have to do.
 Simply download a release and add the binaries to your global path variable.
 
 ---
