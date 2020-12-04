@@ -53,10 +53,10 @@ result.head = renderedObject.getMember("head").asString();
 result.html = renderedObject.getMember("html").asString();
 result.css = renderedObject.getMember("css").getMember("code").asString();
 ```
-where ```Svelte3SSRResult``` would be simple wrapper object.
+where ```Svelte3SSRResult``` would be a simple wrapper object.
 
 ### Svelte3DOM
-Rendering svelte server is is pretty neat, but that might not be enough for your needs.
+Rendering svelte server side is pretty neat, but that might not be enough for your needs.
 Once the client loads your prerendered page there will be no dynamic functionalities and that's because server side javascript has no notion of what a DOM is, thus you will not be able to attach events or other interactive features to your client's DOM.
 
 In order to make the DOM interactive and enable all the features Svelte offers, you will need to also prepare a bundle for your client, and you can do that with ```com.github.tncrazvan.svelte3dom.Svelte3DOM```.
