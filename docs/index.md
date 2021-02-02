@@ -1,7 +1,7 @@
 # Svelte SSR for Spring Boot
 
 This project offers a template for getting started to use Java Spring Boot and render Svelte on the server.
-This project is still being tested and not all features might work correctly.
+This project is is not production-ready and not all features might work correctly.
 
 Most of the bugs have root in the ```require``` function of nodejs.
 
@@ -86,17 +86,8 @@ You will need to inject the ```Svelte3SSRService``` and the ```Svelte3DOMService
 - ```Svelte3DOMService``` should be viewed in the same way as ```Svelte3SSRService``` but for bundle compilation.
 
 ### NOTE:
-If you've already tried to use this project in the past, you might have to clean your Maven repositories manually in order to get the new updates since the version number is basically the same as before.
-
-- On Linux, your maven repositories should be located in: ```~/.m2/repository/com/github/tncrazvan/Svelte3SSR``` and ```~/.m2/repository/com/github/tncrazvan/Svelte3DOM```
-- On Windows, you can find them in: ```C:\Users\{username}\.m2\repository\com\github\tncrazvan\Svelte3SSR``` and ```C:\Users\{username}\.m2\repository\com\github\tncrazvan\Svelte3DOM```
-- on Mac OS: ```~/.m2/repository/com/github/tncrazvan/Svelte3SSR``` and ```~/.m2/repository/com/github/tncrazvan/Svelte3DOM```
-
-Remove these 2 repositories and run your server (```mvn spring-boot:run```).
 
 I haven't tested every single thing, but most things should work properly.
 Most of the bugs you will find will be most probably related to the "import" and "export" keywords, since I had to implement them myself from scratch and that is because the GraalVM interoperability framework does not include NodeJS as a language itself but instead it only offers the plain JavaScript language, which as I mentioned before, is missing the ```require``` function.
-
-In any case if you find any bugs feel free to submit an issue to the repository, I'll try to look into it and fix it.
 
 I hope you find it interesting, have fun and stay safe!
