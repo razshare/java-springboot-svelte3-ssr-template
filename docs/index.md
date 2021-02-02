@@ -1,6 +1,6 @@
 # Svelte SSR for Spring Boot
 
-This project offers a template for getting started to use Java Spring Boot and render Svelte on the server.
+This project offers a template for getting started to use Java Spring Boot and render Svelte on the server.<br />
 This project is is not production-ready and not all features might work correctly.
 
 Most of the bugs have root in the ```require``` function of nodejs.
